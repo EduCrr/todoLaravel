@@ -1,0 +1,221 @@
+:root {
+    --background-light: #e7e7ff;
+    --background-white: #f6f5ff;
+    --text-dark: #f0f2fa;
+    --color-primary: #6143ff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-white);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.sideBar {
+    width: 100px;
+    background-color: var(--color-primary);
+}
+.sideBar img {
+    max-width: 100%;
+}
+nav {
+    color: var(--text-dark);
+    height: 100px;
+    width: calc(100vw - 100px);
+    background-color: #c0bfee;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+a {
+    text-decoration: none;
+}
+nav a {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+main {
+    color: #000;
+    display: flex;
+}
+
+section.graph {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 0px 20px;
+}
+section.list {
+    flex: 1;
+}
+.graphHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress {
+    padding-right: 20px;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+}
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #999;
+}
+.date {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.graphSubtitle {
+    margin-top: 10px;
+}
+
+.graphPlaceholder {
+    background-color: #ccc;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    margin-top: 50px;
+    background: url("/assets/images/graph.png");
+    background-size: contain;
+    margin-bottom: 10px;
+}
+.tasksLeftFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.list {
+    padding: 20px 20px 0px 20px;
+}
+.listHeader {
+    display: flex;
+}
+.listSelect {
+    background-color: transparent;
+    border: 0;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.taskList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+.task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--background-light);
+    transition: all 0.3s ease-in-out;
+}
+.task:hover {
+    background-color: var(--background-light);
+}
+.title {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+.taskTitle {
+    padding-left: 10px;
+    font-weight: bold;
+}
+.priotity,
+.actions {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+}
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+.actions a {
+    margin: 0px 10px;
+    transition: all 0.3s ease-in-out;
+}
+.actions a:hover {
+    transform: scale(1.5);
+}
+.sphere {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.createTask {
+    margin: auto;
+    padding-top: 20px;
+}
+.inputArea {
+    display: block;
+    margin: 10px 0px 20px 0px;
+}
+.inputArea > label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.inputArea > input,
+select {
+    height: 40px;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+.inputArea > textarea {
+    height: 120px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.btnSend {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: 0px;
+    cursor: pointer;
+}
+.btn {
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
