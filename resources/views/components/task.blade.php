@@ -1,6 +1,6 @@
 <div class="task">
     <div class="title">
-        <input type="checkbox" 
+        <input id="check" type="checkbox" 
             @if ($data->is_done)
                 checked
             @endif
@@ -16,3 +16,4 @@
         <a href="{{route('task.delete', ['id' => $data['id']])}}"> <img src="/assets/images/icon-delete.png"/></a>
     </div>
 </div>
+

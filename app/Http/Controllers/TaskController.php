@@ -39,11 +39,9 @@ class TaskController extends Controller
        
     }
 
-     public function edit_action(Request $request, $id){
+    public function edit_action(Request $request, $id){
         $task = Task::find($id);
         
-       
-
         $requestData = $request->only(['title', 'is_done', 'due_date', 'category_id', 'description']);
 
         if($request->input('is_done') === null){
@@ -55,8 +53,21 @@ class TaskController extends Controller
             $task->save();
             return redirect('/task/edit/'.$id);
         }
+    }
 
-        return view('/');
+    public function edit_action_check(Request $request, $id){
+        $task = Task::find($id);
+        $requestData = $request->only(['is_done',]);
+
+        if($request->input('is_done') === null){
+            $requestData['is_done'] = false;
+        }
+        
+        if($task){
+            $task->update($requestData);
+            $task->save();
+            return redirect('/');
+        }
     }
 
     public function delete(Request $request, $id){

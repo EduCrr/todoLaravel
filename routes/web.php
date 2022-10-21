@@ -17,8 +17,13 @@ use App\Http\Controllers\TaskController;
 |
 */
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'login_action'])->name('login_action');
+
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'register_action'])->name('register_action'); //action seria criar ou fazer ação
+
 
 Route::get('/task/new', [TaskController::class, 'create'])->name('task.create');
 Route::post('/task/create_action', [TaskController::class, 'create_action'])->name('task.create_action'); //action seria criar ou fazer ação

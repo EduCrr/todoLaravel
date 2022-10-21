@@ -2,7 +2,6 @@
     <x-slot name="btn">
         <a href="{{route('home')}}">Home</a>
     </x-slot>
-    <h1>Editar Tarefa</h1>
     <section class="createTask">
         <form method="POST" action="{{route('task.edit_action', ['id' => $task->id])}}">
             @csrf
