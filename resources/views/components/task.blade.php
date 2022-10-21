@@ -1,6 +1,6 @@
 <div class="task">
     <div class="title">
-        <input id="check" type="checkbox" 
+        <input id="check" type="checkbox" onclick="teste({{ $data->id }})"
             @if ($data->is_done)
                 checked
             @endif

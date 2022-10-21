@@ -4,6 +4,11 @@
     </x-slot>
     <section class="createTask">
         <form method="POST" action="{{route('task.create_action')}}">
+            @if ($errors->any())
+                @foreach ($errors->all() as $erro )
+                    <p>{{$erro}}</p>
+                @endforeach
+            @endif
             @csrf
            <x-form.text_input name='title' label="Título" place="Título" />
            <x-form.text_input name='due_date' label="Data de validação" place="" type="datetime-local" />

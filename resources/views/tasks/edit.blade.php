@@ -4,6 +4,11 @@
     </x-slot>
     <section class="createTask">
         <form method="POST" action="{{route('task.edit_action', ['id' => $task->id])}}">
+            @if ($errors->any())
+                @foreach ($errors->all() as $erro )
+                    <p>{{$erro}}</p>
+                @endforeach
+            @endif
             @csrf
            <x-form.text_input name='title' label="Título" place="Título" valor="{{$task->title}}" />
            <x-form.check_input name='is_done' label="Tarefa feita?" checked="{{$task->is_done}}" />

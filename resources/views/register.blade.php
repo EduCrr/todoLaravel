@@ -3,7 +3,7 @@
         <a href="{{route('login')}}">Logar</a>
     </x-slot>
         <section class="createTask">
-        <form method="POST" action="{{route('register_action')}}">
+        <form method="POST">
             @csrf
             @if ($errors->any())
                 @foreach ($errors->all() as $erro )

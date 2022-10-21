@@ -2,6 +2,7 @@
     <!--BOTAO COMPONENTE!-->
     <x-slot name="btn">
         <a href="{{route('task.create')}}">Criar tarefa</a>
+        <a href="/logout">Sair</a>
     </x-slot>
     <section class="graph">
         <div class="graphHeader">
@@ -25,9 +26,15 @@
     </section>
     <section class="list">
         <div class="listHeader">
-            <select class="listSelect">
-                <option value="1">Todas as tarefas</option>
-            </select>
+            <form method="get" action="{{route('home')}}">
+                <select id="selectTeste" class="listSelect" name="category_id">
+                    <option value="0">Todas as tarefas</option>
+                        @foreach ($categories as $item)
+                        <option value="{{$item->id}}">{{ $item->title }}</option>
+                    @endforeach
+                </select>
+                <input type="submit" value="teta"/>
+            </form>
         </div>
         <div class="taskList">
 
@@ -38,7 +45,8 @@
             @foreach ($tasks as $item )
                 <x-task :data=$item />
             @endforeach
-           
+
+            
         </div>
     </section>
 </x-layout>

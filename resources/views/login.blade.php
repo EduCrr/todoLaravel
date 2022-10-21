@@ -3,12 +3,10 @@
         <a href="{{route('register')}}">Criar conta</a>
     </x-slot>
         <section class="createTask">
-        <form method="POST" action="{{route('login_action')}}">
+        <form method="POST">
             @csrf
-            @if ($errors->any())
-                @foreach ($errors->all() as $erro )
-                    <p>{{$erro}}</p>
-                @endforeach
+            @if(session('warning'))
+                {{session('warning')}}
             @endif
            <x-form.text_input name='email' label="Seu email" place="Seu email" type="email" />
            <x-form.text_input name='password' label="Sua senha" place="Sua senha" type="password" />
